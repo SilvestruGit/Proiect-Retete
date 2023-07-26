@@ -2,14 +2,63 @@
   text-align: center;
 }
 
-.navBar ul {
+.navbar ul {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
+  margin: 30px;
+  list-style-type: none;
+}
+
+.content {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.reteta {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px 0;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reteta img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.reteta h2 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.reteta .ingrediente {
+  color: #666;
+}
+
+.reteta .ingrediente ul {
+  margin-right: 30px;
+}
+
+.reteta .ingrediente li {
+  margin-bottom: 4px;
+}
+
+
+ul {
+  list-style-type: none;
 }
 
 a {
   text-decoration: none;
+  font-size: x-large;
   color: black;
 }
