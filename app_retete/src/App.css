@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+  border-bottom: 1px solid black;
 }
 
 .navbar ul {
@@ -11,12 +18,19 @@
   list-style-type: none;
 }
 
+.navbar a:hover {
+  color: rgb(85, 34, 136);
+  color: rgb(85, 34, 136);
+  text-decoration: underline;
+}
+
 .content {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   text-align: center;
+  margin: 20px auto;
 }
 
 .reteta {
@@ -29,7 +43,6 @@
 }
 
 .reteta img {
-  max-width: 100%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 16px;
@@ -45,7 +58,7 @@
 }
 
 .reteta .ingrediente ul {
-  margin-right: 30px;
+  margin-right: 40px;
 }
 
 .reteta .ingrediente li {
@@ -61,4 +74,61 @@ a {
   text-decoration: none;
   font-size: x-large;
   color: black;
+}
+
+.formReteta {
+  width: 400px;
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formReteta h2 {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.formReteta label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.formReteta button {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  height: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formReteta button:hover {
+  background-color: rgb(210, 185, 235);
+}
+
+.formReteta input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.formReteta hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 16px 0;
+}
+
+.stergeReteta {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  height: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stergeReteta:hover {
+  background-color: rgb(210, 185, 235);
 }
