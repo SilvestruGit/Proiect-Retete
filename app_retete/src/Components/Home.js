@@ -12,6 +12,17 @@ const Home = () => {
         setRetete(newRetete);
     }
 
+    const handleFavorit = (id) => {
+        setRetete((prevRetete) => 
+            prevRetete.map(reteta =>     
+                reteta.imgSrc === id ? {
+                    ...reteta,
+                    favorit: !reteta.favorit
+                } : reteta
+            )
+        )
+    };
+
     useEffect(() => {
         fetch('http://localhost:8000/retete')
             .then(response => {
@@ -31,10 +42,10 @@ const Home = () => {
                     retete={retete} 
                     titlu={'Toate retetele'} 
                     handleDelete={handleDelete}
+                    handleFavorit={handleFavorit}
                 />
                 : null
             }
-            <FromReteta/>
         </div>
     );
 }
