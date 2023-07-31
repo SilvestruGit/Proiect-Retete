@@ -1,8 +1,7 @@
 import Retete from "./Retete";
-import { useEffect } from "react";
 
-const Home = ({retete, setRetete}) => {
-
+const Favorite = ({retete, setRetete}) => {
+    
     const handleDelete = (id) => {
         let newRetete = retete.filter(reteta => reteta.id !== id)
         setRetete(newRetete);
@@ -18,24 +17,17 @@ const Home = ({retete, setRetete}) => {
             )
         )
     };
-
-    useEffect(() => {
-        setRetete(retete);
-    }, [retete, setRetete]);
-
+    
     return ( 
         <div>
-            {retete ? 
-                <Retete 
-                    retete={retete} 
-                    titlu={'Toate retetele'} 
-                    handleDelete={handleDelete}
-                    handleFavorit={handleFavorit}
-                />
-                : null
-            }
+            <Retete 
+                retete={retete.filter(reteta => reteta.favorit)} 
+                titlu={'Retetele favorite'} 
+                handleDelete={handleDelete}
+                handleFavorit={handleFavorit}
+            />
         </div>
     );
 }
 
-export default Home;
+export default Favorite;

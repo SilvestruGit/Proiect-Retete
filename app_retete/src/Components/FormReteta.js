@@ -1,11 +1,10 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
-const FromReteta = () => {
+const FromReteta = ({retete, setRetete}) => {
 
     const [nume, setNume] = useState('Lasagna');
-    const [link, setLink] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaLr6u7YzC5znNRMfm1_8geBTpTGLfIXarw8IB5YRLnQ&s');
+    const [link, setLink] = useState("");
     const [ingrediente, setIngrediente] = useState([
         '500 g faina tip 650',
         '325 ml apa calduta',
@@ -17,19 +16,24 @@ const FromReteta = () => {
     const [timpPreparare, setTimpPreparare] = useState('45');
     const [favorit, setFavorit] = useState(false);
 
-    // NU FUNCTIONEAZA EROARE 500
     const handleSubmit = (e) => { 
         e.preventDefault();
         const reteta = {nume, link, ingrediente, timpPreparare, favorit};
         
-        console.log(reteta);
+        reteta.id = nrRetete(retete);
 
-        fetch('http://localhost:8000/retete', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(reteta)
-            })
-            .then(console.log('new reteta added'));
+        console.log(retete);
+
+        let newRetete = retete;
+        newRetete.push(reteta);
+        setRetete(newRetete);
+
+        // fetch('http://localhost:8000/retete', {
+        //     method: 'POST',
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(reteta)
+        //     })
+        //     .then(console.log('new reteta added'));
     }
 
     return ( 
@@ -79,6 +83,12 @@ const FromReteta = () => {
             <button>Adauga reteta</button>
         </form>
     );
+}
+
+const nrRetete = (retete) => {
+    let contor = 0;
+    retete.forEach((reteta)=>{contor = reteta.id});
+    return parseInt(contor) + 1;
 }
  
 export default FromReteta;

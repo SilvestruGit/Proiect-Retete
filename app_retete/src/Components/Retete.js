@@ -6,9 +6,9 @@ const Retete = ({retete, titlu, handleDelete, handleFavorit}) => {
         <div>
             <h2>{titlu}</h2>
             {
-                retete.map((reteta, index) => (
+                retete.map((reteta) => (
                     
-                    <div className="reteta" key={index}>
+                    <div className="reteta" key={reteta.id}>
                         <img src={reteta.imgSrc} alt="img not loading" />
                         <h2>{reteta.nume}</h2>
                         <p>Timp de preparare: {reteta.timpPreparare} minute</p>
@@ -20,9 +20,9 @@ const Retete = ({retete, titlu, handleDelete, handleFavorit}) => {
                                 ))}
                             </ul>
                         </div>
-                        <div className="butoaneFavorit" key={index}>
-                            <button className="stergeReteta" onClick={() => handleDelete(reteta.imgSrc)}>Sterge</button>
-                            <button className="butonFav" onClick={() => handleFavorit(reteta.imgSrc)}> 
+                        <div className="butoaneFavorit" key={reteta.id}>
+                            <button className="stergeReteta" onClick={() => handleDelete(reteta.id)}>Sterge</button>
+                            <button className="butonFav" onClick={() => handleFavorit(reteta.id)}> 
                                 {reteta.favorit ? 'Sterge de la favorite' : 'Adauga la favorite'}
                             </button>
                         </div>
