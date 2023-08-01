@@ -1,7 +1,10 @@
 import Retete from "./Retete";
 import { useEffect } from "react";
 
-const Home = ({retete, setRetete}) => {
+const Home = ({
+    retete, setRetete,
+    filtruCina, filtruMicDejun, filtruPranz,
+    }) => {
 
     const handleDelete = (id) => {
         let newRetete = retete.filter(reteta => reteta.id !== id)
@@ -23,11 +26,21 @@ const Home = ({retete, setRetete}) => {
         setRetete(retete);
     }, [retete, setRetete]);
 
+    const filteredRetete = retete.filter(reteta => {
+        return (!filtruMicDejun || reteta.micDejun) &&
+               (!filtruPranz || reteta.pranz) &&
+               (!filtruCina || reteta.cina);
+        })
+
     return ( 
         <div>
-            {retete ? 
+            {retete.filter(reteta => {
+                return reteta.micDejun === filtruMicDejun  || 
+                        reteta.pranz === filtruPranz  || 
+                        reteta.cina === filtruCina
+            }) ? 
                 <Retete 
-                    retete={retete} 
+                    retete={filteredRetete} 
                     titlu={'Toate retetele'} 
                     handleDelete={handleDelete}
                     handleFavorit={handleFavorit}

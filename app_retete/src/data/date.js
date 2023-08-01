@@ -2,6 +2,9 @@ const date = [
         {
             "id": "0",
             "nume": "Salata Orientala",
+            "micDejun": false,
+            "pranz": true,
+            "cina": false,
             "timpPreparare": "35",
             "favorit": false,
             "ingrediente": ["oua", "ceapa", "cartofi", "sare", "piper"],
@@ -10,6 +13,9 @@ const date = [
         {
             "id": "1",
             "nume": "Omleta",
+            "micDejun": true,
+            "pranz": false,
+            "cina": false,
             "timpPreparare": "7",
             "favorit": true,
             "ingrediente": ["oua", "sunca", "patrunjel", "sare", "piper"],

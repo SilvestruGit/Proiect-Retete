@@ -4,7 +4,7 @@ import { useState } from "react";
 const FromReteta = ({retete, setRetete}) => {
 
     const [nume, setNume] = useState('Lasagna');
-    const [link, setLink] = useState("");
+    const [link, setLink] = useState('');
     const [ingrediente, setIngrediente] = useState([
         '500 g faina tip 650',
         '325 ml apa calduta',
@@ -15,6 +15,9 @@ const FromReteta = ({retete, setRetete}) => {
     ]);
     const [timpPreparare, setTimpPreparare] = useState('45');
     const [favorit, setFavorit] = useState(false);
+    const [micDejun, setMicDejun] = useState(false);
+    const [pranz, setPranz] = useState(false);
+    const [cina, setCina] = useState(false);
 
     const handleSubmit = (e) => { 
         e.preventDefault();
@@ -27,6 +30,8 @@ const FromReteta = ({retete, setRetete}) => {
         let newRetete = retete;
         newRetete.push(reteta);
         setRetete(newRetete);
+
+        alert(`${reteta.nume} a fost adaugata la lista de retete!`);
 
         // fetch('http://localhost:8000/retete', {
         //     method: 'POST',
@@ -80,6 +85,29 @@ const FromReteta = ({retete, setRetete}) => {
                 value={favorit}
             />
             <hr />
+            <div className="momentulZilei">
+                <label htmlFor="micDejun">Mic Dejun</label>
+                <input 
+                    type="checkbox" 
+                    id="micDejun"
+                    onChange={() => setMicDejun(!micDejun)}
+                    value={micDejun}
+                />
+                <label htmlFor="pranz">Pranz</label>
+                <input 
+                    type="checkbox" 
+                    id="pranz"
+                    onChange={() => setPranz(!pranz)}
+                    value={pranz}
+                />
+                <label htmlFor="cina">Cina</label>
+                <input 
+                    type="checkbox" 
+                    id="cina"
+                    onChange={() => setCina(!cina)}
+                    value={cina}
+                />
+            </div>
             <button>Adauga reteta</button>
         </form>
     );
