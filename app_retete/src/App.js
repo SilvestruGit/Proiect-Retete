@@ -7,6 +7,7 @@ import { useState } from 'react';
 import date from './data/date';
 import Favorite from './Components/Favorite';
 import Filtru from './Components/Filtru';
+import Info from './Components/Info';
 
 
 function App() {
@@ -56,12 +57,21 @@ function App() {
                     filtruCina={filtruCina}
                     filtruMicDejun={filtruMicDejun}
                     filtruPranz={filtruPranz}
-                  />}  
+                  />
+                }  
               />
               <Route 
                 exact path='/adauga' 
                 element={<FromReteta retete={retete} setRetete={setRetete} />}
-              />                
+              />
+              <Route 
+                path='/retete/:id'
+                element={
+                  <Info 
+                    retete={retete}
+                  />
+                }
+              />          
             </Routes>
           </div>
       </div>

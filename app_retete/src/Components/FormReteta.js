@@ -18,12 +18,17 @@ const FromReteta = ({retete, setRetete}) => {
     const [micDejun, setMicDejun] = useState(false);
     const [pranz, setPranz] = useState(false);
     const [cina, setCina] = useState(false);
+    const [descriere, setDescriere] = useState("");
 
     const handleSubmit = (e) => { 
         e.preventDefault();
         const reteta = {nume, link, ingrediente, timpPreparare, favorit};
         
         reteta.id = nrRetete(retete);
+        reteta.micDejun = micDejun;
+        reteta.pranz = pranz;
+        reteta.cina = cina;
+        reteta.descriere = descriere;
 
         console.log(retete);
 
@@ -76,6 +81,16 @@ const FromReteta = ({retete, setRetete}) => {
                 id="timp"
                 onChange={(e) => setTimpPreparare(e.target.value)}
             />
+            <hr />
+            <textarea 
+                name="descriere"   
+                id="descriere"
+                placeholder="Mod de preparare: " 
+                cols="30" 
+                rows="5" 
+                value={descriere} 
+                onChange={(e) => setDescriere(e.target.value)}>
+            </textarea>
             <hr />
             <label htmlFor="favorit">Vreti sa adaugati la favorite?</label>
             <input 
