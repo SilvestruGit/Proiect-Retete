@@ -2,7 +2,7 @@ import './App.css';
 import Home from './Components/Home';
 import Navbar from './Components/Navbar';
 import FromReteta from './Components/FormReteta';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import date from './data/date';
 import Favorite from './Components/Favorite';
@@ -17,47 +17,60 @@ function App() {
   const [filtruPranz, setFiltruPranz] = useState(false);
   const [filtruCina, setFiltruCina] = useState(false);
 
+  // const location = useLocation();
+  // const isInfoPage = location.pathname.startsWith('/retete/');
+
   return (
     <Router>
       <div className="App">
         <Navbar/>
           <div className="content">
-            <Filtru 
-              filtruCina={filtruCina}
-              filtruMicDejun={filtruMicDejun}
-              filtruPranz={filtruPranz}
-              setFiltruCina={setFiltruCina}
-              setFiltruMicDejun={setFiltruMicDejun}
-              setFiltruPranz={setFiltruPranz}
-            />
             <Routes>
               <Route 
                 exact path='/' 
                 element={
-                  <div>
-                    <Home 
-                      retete={retete} 
-                      setRetete={setRetete}
-                      filtruCina={filtruCina}
-                      filtruMicDejun={filtruMicDejun}
-                      filtruPranz={filtruPranz}
-                      setFiltruCina={setFiltruCina}
-                      setFiltruMicDejun={setFiltruMicDejun}
-                      setFiltruPranz={setFiltruPranz} 
-                    />
-                  </div>
+                <div className='content'>
+                  <Filtru
+                    filtruCina={filtruCina}
+                    filtruMicDejun={filtruMicDejun}
+                    filtruPranz={filtruPranz}
+                    setFiltruCina={setFiltruCina}
+                    setFiltruMicDejun={setFiltruMicDejun}
+                    setFiltruPranz={setFiltruPranz}
+                  />
+                  <Home
+                    retete={retete}
+                    setRetete={setRetete}
+                    filtruCina={filtruCina}
+                    filtruMicDejun={filtruMicDejun}
+                    filtruPranz={filtruPranz}
+                    setFiltruCina={setFiltruCina}
+                    setFiltruMicDejun={setFiltruMicDejun}
+                    setFiltruPranz={setFiltruPranz}
+                  />
+                </div>
                 }
               />
               <Route 
                 exact path='/favorite' 
                 element={
-                  <Favorite
-                    retete={retete} 
-                    setRetete={setRetete}
-                    filtruCina={filtruCina}
-                    filtruMicDejun={filtruMicDejun}
-                    filtruPranz={filtruPranz}
-                  />
+                  <div className='content'>
+                    <Filtru
+                      filtruCina={filtruCina}
+                      filtruMicDejun={filtruMicDejun}
+                      filtruPranz={filtruPranz}
+                      setFiltruCina={setFiltruCina}
+                      setFiltruMicDejun={setFiltruMicDejun}
+                      setFiltruPranz={setFiltruPranz}
+                    />
+                    <Favorite
+                      retete={retete}
+                      setRetete={setRetete}
+                      filtruCina={filtruCina}
+                      filtruMicDejun={filtruMicDejun}
+                      filtruPranz={filtruPranz}
+                    />
+                </div>
                 }  
               />
               <Route 
@@ -67,16 +80,17 @@ function App() {
               <Route 
                 path='/retete/:id'
                 element={
-                  <Info 
-                    retete={retete}
-                  />
+                  <div>
+                    <Info 
+                      retete={retete}
+                    />
+                  </div>
                 }
-              />          
+              />              
             </Routes>
           </div>
       </div>
     </Router>
-    
   );
 }
 

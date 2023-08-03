@@ -1,10 +1,8 @@
 
-
 const Filtru = ({
     filtruCina, filtruMicDejun, filtruPranz,
-    setFiltruCina, setFiltruMicDejun, setFiltruPranz
-    }) => {
-    
+    setFiltruCina, setFiltruMicDejun, setFiltruPranz}) => {
+
     return (
         <div className="filtru">
             <ul>

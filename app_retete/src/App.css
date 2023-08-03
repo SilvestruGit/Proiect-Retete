@@ -142,6 +142,7 @@ a {
 
 .formReteta button:hover {
   background-color: rgb(210, 185, 235);
+  cursor:pointer;
 }
 
 .formReteta input {
@@ -174,7 +175,17 @@ a {
 
 .stergeReteta:hover {
   background-color: rgb(210, 185, 235);
+  cursor:pointer;
 }
 .butonFav:hover {
   background-color: rgb(210, 185, 235);
+  cursor:pointer;
+}
+
+.reteta:hover {
+  background-color: rgb(232, 220, 243);
+}
+
+input[type=checkbox] {
+  cursor:pointer;
 }

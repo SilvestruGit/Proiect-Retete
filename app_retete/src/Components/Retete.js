@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Retete = ({retete, titlu, handleDelete, handleFavorit}) => {
-
+    // console.log(retete);
     return (
         <div>
             <h2>{titlu}</h2>
