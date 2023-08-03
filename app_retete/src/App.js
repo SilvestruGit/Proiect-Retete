@@ -2,7 +2,7 @@ import './App.css';
 import Home from './Components/Home';
 import Navbar from './Components/Navbar';
 import FromReteta from './Components/FormReteta';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import date from './data/date';
 import Favorite from './Components/Favorite';
