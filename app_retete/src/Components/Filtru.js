@@ -1,7 +1,9 @@
 
 const Filtru = ({
     filtruCina, filtruMicDejun, filtruPranz,
-    setFiltruCina, setFiltruMicDejun, setFiltruPranz}) => {
+    setFiltruCina, setFiltruMicDejun, setFiltruPranz,
+    search, setSearch
+}) => {
 
     return (
         <div className="filtru">
@@ -27,6 +29,15 @@ const Filtru = ({
                     value={filtruCina}
                     onChange={() => setFiltruCina(!filtruCina)}
                 />
+                <li>
+                    <input 
+                        type="text" 
+                        className="search"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        placeholder="Cauta retete"
+                    />
+                </li>
             </ul>
         </div>
     )

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 const Home = ({
     retete, setRetete,
     filtruCina, filtruMicDejun, filtruPranz,
+    search,
     }) => {
 
     const handleDelete = (id) => {
@@ -40,7 +41,7 @@ const Home = ({
                         reteta.cina === filtruCina
             }) ? 
                 <Retete 
-                    retete={filteredRetete} 
+                    retete={filteredRetete.filter(r => {return r.nume.toLowerCase().includes(search.toLowerCase())})} 
                     titlu={'Toate retetele'} 
                     handleDelete={handleDelete}
                     handleFavorit={handleFavorit}

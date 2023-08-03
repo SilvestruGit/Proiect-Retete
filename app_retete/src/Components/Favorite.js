@@ -2,7 +2,8 @@ import Retete from "./Retete";
 
 const Favorite = ({
     retete, setRetete,
-    filtruCina, filtruMicDejun, filtruPranz
+    filtruCina, filtruMicDejun, filtruPranz,
+    search
     }) => {
     
     const handleDelete = (id) => {
@@ -31,7 +32,7 @@ const Favorite = ({
     return ( 
         <div>
             <Retete 
-                retete={filteredRetete} 
+                retete={filteredRetete.filter(r => {return r.nume.toLowerCase().includes(search.toLowerCase())})} 
                 titlu={'Retetele favorite'} 
                 handleDelete={handleDelete}
                 handleFavorit={handleFavorit}

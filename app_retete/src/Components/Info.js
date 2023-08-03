@@ -17,12 +17,6 @@ let Info = ({retete}) => {
                 </ul>
             </div>
             <p>{reteta.descriere}</p>
-            {/* <div className="butoaneFavorit" key={reteta.id}>
-                <button className="stergeReteta" onClick={() => handleDelete(reteta.id)}>Sterge</button>
-                <button className="butonFav" onClick={() => handleFavorit(reteta.id)}> 
-                    {reteta.favorit ? 'Sterge de la favorite' : 'Adauga la favorite'}
-                </button>
-            </div> */}
         </div>
     );
 }

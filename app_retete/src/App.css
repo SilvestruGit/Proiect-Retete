@@ -189,3 +189,7 @@ a {
 input[type=checkbox] {
   cursor:pointer;
 }
+
+.search {
+  text-align: center;
+}

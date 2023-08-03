@@ -17,6 +17,8 @@ function App() {
   const [filtruPranz, setFiltruPranz] = useState(false);
   const [filtruCina, setFiltruCina] = useState(false);
 
+  const [search, setSearch] = useState("");
+
   // const location = useLocation();
   // const isInfoPage = location.pathname.startsWith('/retete/');
 
@@ -37,6 +39,8 @@ function App() {
                     setFiltruCina={setFiltruCina}
                     setFiltruMicDejun={setFiltruMicDejun}
                     setFiltruPranz={setFiltruPranz}
+                    search={search}
+                    setSearch={setSearch}
                   />
                   <Home
                     retete={retete}
@@ -47,6 +51,7 @@ function App() {
                     setFiltruCina={setFiltruCina}
                     setFiltruMicDejun={setFiltruMicDejun}
                     setFiltruPranz={setFiltruPranz}
+                    search={search}
                   />
                 </div>
                 }
@@ -62,6 +67,8 @@ function App() {
                       setFiltruCina={setFiltruCina}
                       setFiltruMicDejun={setFiltruMicDejun}
                       setFiltruPranz={setFiltruPranz}
+                      search={search}
+                      setSearch={setSearch}
                     />
                     <Favorite
                       retete={retete}
@@ -69,6 +76,7 @@ function App() {
                       filtruCina={filtruCina}
                       filtruMicDejun={filtruMicDejun}
                       filtruPranz={filtruPranz}
+                      search={search}
                     />
                 </div>
                 }  
