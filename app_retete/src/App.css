@@ -9,6 +9,11 @@
   border-bottom: 1px solid black;
 }
 
+.adaugaIngredient {
+  display: flex;
+  justify-content: center;
+}
+
 .ingredienteForm {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -108,6 +113,54 @@
   margin-bottom: 4px;
 }
 
+.popup h2 {
+  position: relative;
+  top:5px;
+}
+
+.popup form {
+  position: fixed;
+  width: 15%;
+  height: 20%;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  transform: translate(100%, -50%);
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.popup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.popup input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.popup button {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  height: 30px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.popup button:hover {
+  background-color: rgb(210, 185, 235);
+  cursor: pointer;
+}
 
 ul {
   list-style-type: none;

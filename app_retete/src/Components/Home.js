@@ -8,7 +8,7 @@ const Home = ({
     }) => {
 
     const handleDelete = (id) => {
-        let newRetete = retete.filter(reteta => reteta.id !== id)
+        const newRetete = retete.filter(reteta => reteta.id !== id)
         setRetete(newRetete);
     }
 
@@ -37,8 +37,8 @@ const Home = ({
         <div>
             {retete.filter(reteta => {
                 return reteta.micDejun === filtruMicDejun  || 
-                        reteta.pranz === filtruPranz  || 
-                        reteta.cina === filtruCina
+                    reteta.pranz === filtruPranz  || 
+                    reteta.cina === filtruCina
             }) ? 
                 <Retete 
                     retete={filteredRetete.filter(r => {return r.nume.toLowerCase().includes(search.toLowerCase())})} 

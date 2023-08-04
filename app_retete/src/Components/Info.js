@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 let Info = ({retete}) => {
     const { id } = useParams();
     const reteta = retete.find(r => r.id === id);
+    
     return (
         <div className="reteta" key={reteta.id}>
             <img src={reteta.imgSrc} alt="img not loading" />
