@@ -16,6 +16,15 @@ function App() {
   const [filtruMicDejun, setFiltruMicDejun] = useState(false);
   const [filtruPranz, setFiltruPranz] = useState(false);
   const [filtruCina, setFiltruCina] = useState(false);
+  const [ingrediente, setIngrediente] = useState({
+    "sare": false,
+    "oua": false,
+    "piper": false,
+    "faina": false,
+    "lapte": false,
+    "rosii": false,
+    "cascaval": false,
+  });
 
   const [search, setSearch] = useState("");
 
@@ -83,7 +92,13 @@ function App() {
               />
               <Route 
                 exact path='/adauga' 
-                element={<FromReteta retete={retete} setRetete={setRetete} />}
+                element={
+                  <FromReteta 
+                    retete={retete} 
+                    setRetete={setRetete} 
+                    ingrediente={ingrediente}
+                    setIngrediente={setIngrediente}
+                  />}
               />
               <Route 
                 path='/retete/:id'
